@@ -1,0 +1,12 @@
+name: razor
+root: ~/src
+
+windows:
+  - hxs: cd ~/src/hx-simulator && vim
+  - hxs: cd ~/src/hx-simulator
+  - razor: cd ~/src/razor && source ~/py_venvs/razor/bin/activate && vim
+  - razor: cd ~/src/razor && source ~/py_venvs/razor/bin/activate
+  - mxAgent: cd ~/src/mxAgent/mxAgent/test/smoke/razor && source ~/py_venvs/razor/bin/activate && vim
+  - mxAgent: cd ~/src/mxAgent/mxAgent/test/smoke/razor && source ~/py_venvs/razor/bin/activate
+  - pt: cd ~/src/process-tracker-plugin/plugin/test/razor && source ~/py_venvs/razor/bin/activate && vim
+  - pt: cd ~/src/process-tracker-plugin/plugin/test/razor && source ~/py_venvs/razor/bin/activate

@@ -1,0 +1,8 @@
+name: e2e
+root: ~/src
+
+windows:
+  - e2e:
+    root: ~/src/Agent
+    panes:
+      - source ~/py_venvs/agent_tests/bin/activate && vim

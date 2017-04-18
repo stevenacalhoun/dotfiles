@@ -1,0 +1,6 @@
+[include]
+  path = ~/.gitconfig.machine
+[merge]
+  tool = opendiff
+[grep]
+  lineNumber = true

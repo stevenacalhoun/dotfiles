@@ -1,0 +1,31 @@
+#autoload -Uz vcs_info
+#precmd() { vcs_info }
+#zstyle ':vcs_info:git:*' formats '%b'
+#
+#setopt PROMPT_SUBST
+#export PROMPT=$'\n'"%F{blue}%~%f%b %F{240}${vcs_info_msg_0_}%f "$'\n'"%F{magenta}❯ %f"
+
+export PATH=/usr/local/opt/openssl/bin:$PATH
+
+## Vdev specifics
+# Vdev node path
+export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:/Users/steven.calhoun/src/Agent
+
+export LANG="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Pure prompt
+autoload -U promptinit; promptinit
+prompt pure
+

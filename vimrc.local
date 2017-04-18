@@ -1,0 +1,114 @@
+" Change leader
+let mapleader='\'
+
+let $MYVIMRCLOCAL = "~/.vimrc.local"
+nnoremap <leader>ev :vsplit $MYVIMRCLOCAL<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+set formatoptions-=tc
+
+" Wrap in quotes
+nnoremap <leader>' viw<c-[>a'<c-[>bi'<c-[>lel
+nnoremap <leader>" viw<c-[>a"<c-[>bi"<c-[>lel
+vnoremap <leader>' <c-c>`<i'<c-[>`>a'<c-[>lel
+vnoremap <leader>" <c-c>`<i"<c-[>`>a"<c-[>lel
+
+let g:statusline=""
+let g:python_pylint_change_directory=0
+
+" Font
+set linespace=0
+scriptencoding utf-8
+set encoding=utf-8
+
+" Max width
+highlight ColorColumn ctermbg=8
+
+" Color scheme
+set background=dark
+hi Visual guifg=White guibg=LightBlue gui=none
+hi MatchParen cterm=bold,underline term=bold,underline ctermbg=none ctermfg=green
+if (has("termguicolors"))
+  "set termguicolors
+endif
+colorscheme OceanicNext
+
+" White space cleanup
+augroup TrailingSpaces
+  autocmd!
+  autocmd BufWritePre * %s/\s\+$//e
+augroup END
+
+" Invisible characters
+set listchars=eol:¬,tab:»»,trail:·
+
+" Highlight all search
+set hlsearch
+highlight Search ctermbg=blue ctermfg=black
+:nnoremap <CR> :nohlsearch<CR><CR>
+
+" Fix pbcopy issue with tmux
+if $TMUX != ''
+  set clipboard+=unnamed
+endif
+
+" Tab stuff
+set breakindent
+
+" NerdTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeShowHidden=1
+let NERDTreeMapOpenSplit='o'
+let NERDTreeMapActivateNode='<CR>'
+let NERDTreeIgnore=['\.pyc$', '\~$']
+
+" NerdCommenter
+let g:NERDDefaultAlign='left'
+let g:NERDCommentEmptyLines=1
+
+" Window splits look
+highlight VertSplit ctermbg=green
+highlight VertSplit ctermfg=green
+source ~/.vimrc.space.local
+
+" Airline
+set laststatus=2
+set t_Co=256
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_powerline_fonts=1
+let g:airline_skip_empty_sections = 0
+let g:airline_symbols = get(g:, 'airline_symbols', {})
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr=''
+
+" Ctrl-P Settings
+let g:ctrlp_custom_ignore = {
+  \ 'dir': 'node_modules',
+\ }
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+
+
+" JS/JSX
+let g:jsx_ext_required=0
+
+" ALE
+let g:ale_javascript_eslint_use_global=1
+let g:ale_javascript_eslint_executable='eslint'
+let g:ale_python_pylint_options = '--rcfile=~/.pylintrc'
+let g:python_pylint_change_directory=0
+
+" Remap fun
+:nnoremap <C-F> :execute '%!python -c "import sys, json; json.dump(json.load(sys.stdin), sys.stdout, indent=2)"' \| w<CR>
+:nnoremap H 0
+:nnoremap 0 :echoe "Use H"<cr>
+:nnoremap L $
+:nnoremap $ :echoe "Use L"<cr>
+:nnoremap J G
+:nnoremap G :echoe "Use J"<cr>
+:nnoremap K gg
+:nnoremap gg :echoe "Use K"<cr>
+:inoremap jk <c-[>
+:inoremap <c-[> <nop>
+:inoremap <esc> <nop>

@@ -1,0 +1,14 @@
+[[ -f ~/.aliases.machine ]] && source ~/.aliases.machine
+
+colorTail() {
+  echo "$0"
+  echo "$1"
+  echo "$2"
+  tail -f "$1" | awk '
+    /INFO/ {print "\033[32m" $0 "\033[39m"}
+    /SEVERE/ {print "\033[31m" $0 "\033[39m"}
+  '
+}
+
+alias ttail=colorTail
+#alias nosetests='nosetests -v --logging-level=INFO --nocapture --nologcapture'

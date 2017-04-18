@@ -1,0 +1,2 @@
+[MESSAGES CONTROL]
+disable=C0111,unused-argument,redefined-outer-name,logging-format-interpolation,too-few-public-methods

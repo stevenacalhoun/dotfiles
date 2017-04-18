@@ -1,0 +1,6 @@
+name: jenkins
+root: ~/src
+
+windows:
+  - jenkins: cd ~/src/jenkins-razor && vim
+  - jenkins: cd ~/src/jenkins-razor

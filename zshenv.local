@@ -1,0 +1,16 @@
+# Nosetest
+export NOSE_REDNOSE=1
+export NOSE_VERBOSE=1
+export NOSE_CONSOLE_LOG=1
+export NOSE_NOCAPTURE=1
+export NOSE_NOLOGCAPTURE=1
+export LOG_LEVEL_TEST=20
+export LOGCAPTURE_LEVEL=20
+
+#export PYTHONWARNINGS=ignore
+export CLICOLOR_FORCE=1
+
+export PYENV_ROOT=/usr/local/var/pyenv
+
+# Machine config
+[[ -f ~/.zshenv.machine ]] && source ~/.zshenv.machine

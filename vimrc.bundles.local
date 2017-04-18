@@ -1,0 +1,45 @@
+" Get rid of unnecessary thoughtbot plugins
+UnPlug 'elixir-lang/vim-elixir'
+UnPlug 'fatih/vim-go'
+UnPlug 'janko-m/vim-test'
+UnPlug 'slim-template/vim-slim'
+UnPlug 'tpope/vim-bundler'
+
+" NERD
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'MarSoft/nerdtree-grep-plugin'
+
+" Language syntax hightlighting
+Plug 'hdima/python-syntax'
+Plug 'nvie/vim-flake8'
+
+" Git
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Editing
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-sleuth'
+
+" Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" JS/JSX
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'gutenye/json5.vim'
+
+" Color
+Plug 'mhartington/oceanic-next'
+
+" Hex Edit
+Plug 'fidian/hexmode'
+
+" Groovy
+Plug 'roxma/vim-tmux-clipboard'
+Plug 'vim-scripts/groovy.vim'
+Plug 'vim-scripts/java.vim'
